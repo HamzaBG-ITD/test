@@ -1,0 +1,52 @@
+
+.box{
+    min-height: 110px;
+    font: normal 500 12px/18px Inter;
+    border: 1px solid #EBEDEE;
+    border-bottom: 3px solid #0D97D5;
+    min-width: 80px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+.box:hover{
+    transform: scale(1.05);
+    box-shadow: 0px 0 10px -2px #00000021;
+    border: 3px solid #0D97D5;
+    border-radius: 4px;
+}
+.title{
+    color: #0D97D5;
+    align-items: center;
+    border-bottom: 1px solid #EBEDEE;
+    padding: 6px 8px 5px;
+}
+.doc{
+    color: #6F7E86;
+    font-weight: 400;
+}
+.content{
+    flex: 1 1 0;
+    padding: 8px;
+    position: relative;
+}
+.importo{
+    color:#00875A
+}
+.progressBg{
+    background-color: #E0F1EB;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0%;
+    z-index: -1;
+    border-radius: 0;
+}
+
+.selected{
+    border-bottom: 4px solid green;
+}
+
+.title-result{
+    font: normal 500 15px/16px Inter;
+    color: #0D97D5;
+}

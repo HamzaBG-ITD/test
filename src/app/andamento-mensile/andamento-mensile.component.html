@@ -1,0 +1,36 @@
+<div class="container mt-5">
+    <div class="d-flex flex-wrap justify-content-center align-items-center">
+        <div *ngFor="let item of Data; let i=index">
+            <div class="d-flex flex-column box" [(ngModel)]="selectedData" ngDefaultControl (mouseup)="mouseUp()"
+                (mouseover)="mouseover(i,months[i],item.importo)" (mousedown)="mousedown(i,months[i],item.importo)"
+                [ngClass]="checkifSelected(i)? 'selected' : 'notselected'">
+                <div class="title">{{months[i]}}</div>
+                <div class="d-flex flex-column justify-content-end content">
+                    <span class="doc">{{item.documenti}} doc.</span>
+                    <span class="importo">{{item.importo | number : '1.0-2'}} €</span>
+                    <span class="progressBg" [style.height]="getProgressValue(item.importo)"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center mt-4">
+        <button class="btn btn-success" (click)="selectAll()" *ngIf="deleteAccept==false">Select All</button>
+        <button class="btn btn-warning" (click)="deleteAll()" *ngIf="deleteAccept==true">Unselect All</button>
+    </div>
+
+
+    <div class="mt-5 text-center" *ngIf="selectedData.length!=0">
+        <h3 class="title-result">The Selected Data is : </h3>
+        <div class="d-flex flex-wrap justify-content-center mt-4">
+            <div class="d-flex flex-column box" *ngFor="let item of selectedData">
+                <div class="title">
+                    {{item.month}}
+                </div>
+                <div class="d-flex flex-column justify-content-end content">
+                    <span class="doc">{{Data[item.id].documenti}} doc.</span>
+                    <span class="importo">{{Data[item.id].importo| number : '1.0-2'}} €</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
